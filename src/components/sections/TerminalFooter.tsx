@@ -57,19 +57,41 @@ export const TerminalFooter: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight mb-2">INITIALIZE COLLABORATION.</h3>
-            <p className="text-white/80 text-sm md:text-base">Ready to engineer the next intelligence paradigm.</p>
+            <h3 className="text-2xl md:text-3xl font-black tracking-[0.1em] mb-2 uppercase">INITIALIZE <span className="text-fire">COLLABORATION</span>.</h3>
+            <p className="text-white/80 text-sm md:text-base font-medium opacity-70">Ready to engineer the next intelligence paradigm.</p>
           </div>
-          <div className="flex gap-3 md:gap-4">
-            <a href="https://github.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="Github">
+          <div className="flex gap-4">
+            <motion.a 
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 87, 34, 0.15)" }}
+              whileTap={{ scale: 0.95 }}
+              href="https://github.com/IamHari01" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/30 transition-colors shadow-2xl" 
+              aria-label="Github"
+            >
               <Github className="w-5 h-5 md:w-6 md:h-6" />
-            </a>
-            <a href="https://linkedin.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="LinkedIn">
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 87, 34, 0.15)" }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.linkedin.com/in/selvaraja007/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/30 transition-colors shadow-2xl" 
+              aria-label="LinkedIn"
+            >
               <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
-            </a>
-            <a href="mailto:selvaraja@example.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="Email">
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 87, 34, 0.15)" }}
+              whileTap={{ scale: 0.95 }}
+              href="mailto:selvahari399@gmail.com" 
+              className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/30 transition-colors shadow-2xl" 
+              aria-label="Email"
+            >
               <Mail className="w-5 h-5 md:w-6 md:h-6" />
-            </a>
+            </motion.a>
           </div>
         </div>
 
@@ -152,7 +174,7 @@ export const TerminalFooter: React.FC = () => {
           </form>
         </motion.div>
 
-        <div className="mt-10 md:mt-12 text-center text-[8px] md:text-[10px] text-white/60 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
+        <div className="mt-10 md:mt-12 text-center text-[8px] md:text-[10px] text-white/60 font-bold tracking-[0.5em] uppercase px-4">
           &copy; 2026 Selvaraja // Built with Autonomous Pride
         </div>
       </div>
