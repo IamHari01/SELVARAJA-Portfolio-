@@ -77,11 +77,11 @@ export const Hero: React.FC = () => {
           className="flex flex-col items-center gap-12"
         >
           <div className="flex flex-col items-center gap-3">
-            <span className="text-[10px] md:text-[12px] font-bold text-fire tracking-[0.8em] uppercase ml-[0.8em] opacity-80">
+            <span className="text-[10px] md:text-[12px] font-bold text-fire tracking-[0.8em] uppercase ml-[0.8em] opacity-90">
               AI Engineer
             </span>
-            <div className="w-16 h-[1px] bg-fire/20" />
-            <span className="text-[10px] md:text-[12px] font-bold text-white/30 tracking-[0.8em] uppercase ml-[0.8em]">
+            <div className="w-16 h-[1px] bg-fire/30" />
+            <span className="text-[10px] md:text-[12px] font-bold text-white/50 tracking-[0.8em] uppercase ml-[0.8em]">
               Autonomous Architect
             </span>
           </div>
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 2 }}
           >
             <LiquidButton 
-              className="w-auto px-12 py-4 text-[10px] h-12 min-w-[200px] shadow-fire/20"
+              className="w-auto px-10 py-3 text-[9px] h-10 min-w-[180px] shadow-fire/30"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Access Systems <ChevronRight className="w-4 h-4" />
@@ -104,7 +104,7 @@ export const Hero: React.FC = () => {
       {/* Scroll Indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
+        animate={{ opacity: 0.3 }}
         transition={{ delay: 3 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block"
       >

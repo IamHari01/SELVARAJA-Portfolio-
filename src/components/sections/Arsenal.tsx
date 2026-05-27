@@ -98,7 +98,7 @@ export const Arsenal: React.FC = () => {
         >
           COGNITIVE <span className="text-fire">ARSENAL</span>
         </motion.h2>
-        <p className="text-white/40 max-w-2xl mx-auto text-base md:text-lg px-4">
+        <p className="text-white/60 max-w-2xl mx-auto text-base md:text-lg px-4">
           A distributed intelligence node architecture orbiting a central thesis of autonomous innovation.
         </p>
       </div>
