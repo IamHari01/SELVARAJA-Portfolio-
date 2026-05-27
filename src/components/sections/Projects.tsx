@@ -41,9 +41,6 @@ export const Projects: React.FC = () => {
             >
               PROJECT <span className="text-electric">ARCHITECTURE</span>
             </motion.h2>
-            <p className="text-white/50 max-w-xl text-base md:text-lg">
-              Engineering high-fidelity systems from first principles. Laboratory-grade execution meets intelligent orchestration.
-            </p>
           </div>
           <div className="text-right hidden md:block">
             <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/30">System Status: Optimized</span>
@@ -110,7 +107,8 @@ export const Projects: React.FC = () => {
                     <Image
                       src={imageData?.imageUrl || ''}
                       alt={project.title}
-                      fill
+                      width={1200}
+                      height={800}
                       className="object-cover opacity-60 grayscale md:hover:grayscale-0 transition-all duration-700"
                       data-ai-hint={imageData?.imageHint}
                     />
