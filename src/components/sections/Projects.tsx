@@ -15,7 +15,9 @@ const projects = [
     tech: ['Python', 'LangGraph', 'Weaviate', 'Gemini', 'Firebase', 'RAG'],
     features: ['Multi-agent node graph', 'Semantic logic matching', 'Real-time orchestration', 'ATS Intelligence'],
     placeholderId: 'project-agent',
-    color: 'fire'
+    color: 'fire',
+    liveUrl: '#',
+    repoUrl: 'https://github.com/IamHari01'
   },
   {
     id: 'project-voting',
@@ -24,7 +26,9 @@ const projects = [
     tech: ['Solidity', 'Ethereum', 'Web3', 'Smart Contracts', 'Blockchain'],
     features: ['Immutable protocol', 'Zero-knowledge proofs', 'Ethereum Mainnet', 'Secure consensus'],
     placeholderId: 'project-voting',
-    color: 'amber'
+    color: 'amber',
+    liveUrl: 'https://project-voting.vercel.app/',
+    repoUrl: 'https://github.com/IamHari01'
   }
 ];
 
@@ -101,19 +105,33 @@ export const Projects: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 mb-4">
                       {project.features.map(f => (
                         <div key={f} className="flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-widest text-white/30 group-hover:text-white/60 transition-colors">
-                          <div className="w-1.5 h-1.5 rounded-full bg-fire shadow-[0_0_10px_rgba(255,87,34,0.8)]" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-fire shadow-[0_0_100px_rgba(255,87,34,0.3)]" />
                           <span>{f}</span>
                         </div>
                       ))}
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                      <button className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-fire text-black font-black text-xs uppercase tracking-[0.2em] shadow-lg shadow-fire/20 hover:shadow-fire/40 transition-all hover:-translate-y-1">
+                      <motion.a
+                        href={project.liveUrl}
+                        target={project.liveUrl !== '#' ? "_blank" : undefined}
+                        rel={project.liveUrl !== '#' ? "noopener noreferrer" : undefined}
+                        whileHover={{ y: -4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-fire text-black font-black text-xs uppercase tracking-[0.2em] shadow-lg shadow-fire/20 hover:shadow-fire/40 transition-all cursor-pointer"
+                      >
                         Systems Access <ArrowUpRight className="w-4 h-4" />
-                      </button>
-                      <button className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 font-black text-xs uppercase tracking-[0.2em] transition-all">
+                      </motion.a>
+                      <motion.a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 font-black text-xs uppercase tracking-[0.2em] transition-all cursor-pointer"
+                      >
                         <Github className="w-4 h-4" /> Protocol
-                      </button>
+                      </motion.a>
                     </div>
                   </div>
                 </div>
