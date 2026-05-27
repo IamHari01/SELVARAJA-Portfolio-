@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LiquidButton } from '@/components/ui/LiquidButton';
-import { ChevronRight, Cpu, Activity, Zap } from 'lucide-react';
+import { ChevronRight, Cpu, Zap } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -54,25 +54,15 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-3xl font-light text-white/80 max-w-2xl mx-auto mb-8 font-headline tracking-[0.15em] uppercase px-4"
+          className="text-lg sm:text-xl md:text-3xl font-light text-white/80 max-w-2xl mx-auto mb-14 font-headline tracking-[0.15em] uppercase px-4"
         >
           AI Engineer | <span className="text-hyper font-bold">Autonomous Architect</span>
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-sm md:text-lg text-white/50 max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium px-4"
-        >
-          Architecting the next generation of scalable intelligent systems through advanced 
-          reasoning, decentralized infrastructure, and autonomous multi-agent orchestration.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col xs:flex-row items-center justify-center gap-4 md:gap-6 px-4"
         >
           <LiquidButton 
