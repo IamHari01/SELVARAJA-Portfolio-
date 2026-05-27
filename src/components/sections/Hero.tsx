@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -9,51 +8,54 @@ import { ChevronRight } from 'lucide-react';
 const name = "SELVARAJA";
 
 export const Hero: React.FC = () => {
-  // Container variants to stagger the letters with Apple-style timing
+  // Main container variants for the Sidewave assembly
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0.2,
+        staggerChildren: 0.08,
+        delayChildren: 0.4,
       },
     },
   };
 
-  // Apple-style "assembling" effect: letters converge from a scale/blur state
+  // High-fidelity entry: letters appear from a scale+blur+vertical offset
   const letterVariants = {
     hidden: { 
       opacity: 0, 
-      scale: 1.4,
-      filter: 'blur(15px)',
-      y: 20
+      y: 60,
+      scale: 1.2,
+      filter: 'blur(12px)',
     },
     visible: { 
       opacity: 1, 
+      y: 0,
       scale: 1,
       filter: 'blur(0px)',
-      y: 0,
       transition: {
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1], // Custom cubic-bezier for that refined "Apple" feel
+        duration: 1.4,
+        ease: [0.16, 1, 0.3, 1], // Sophisticated Apple-style ease-out
       },
     },
   };
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden">
-      <div className="max-w-7xl w-full text-center z-10">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden bg-black">
+      <div className="max-w-[100vw] w-full text-center z-10 px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative inline-block"
+          className="relative inline-block w-full"
         >
-          {/* Main Name: Forced single line with responsive fluid typography */}
+          {/* Main Name: Unbreakable line with fluid typography */}
           <motion.h1
-            className="text-[16vw] sm:text-[14vw] md:text-[12rem] lg:text-[15rem] font-black tracking-[-0.04em] leading-none mb-4 text-white uppercase whitespace-nowrap flex justify-center items-center"
-            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+            className="text-[16vw] sm:text-[14vw] md:text-[12rem] lg:text-[15rem] font-black tracking-[-0.05em] leading-none mb-8 text-white uppercase whitespace-nowrap flex justify-center items-center w-full"
+            style={{ 
+              fontFamily: "'Inter Tight', sans-serif",
+              fontStretch: 'expanded'
+            }}
           >
             {name.split('').map((char, index) => (
               <motion.span
@@ -66,45 +68,44 @@ export const Hero: React.FC = () => {
             ))}
           </motion.h1>
 
-          {/* Subtitle with subtle reveal */}
+          {/* Role and Action with refined reveal */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
-            className="flex flex-col items-center gap-6"
+            transition={{ duration: 1.2, delay: 1.8, ease: "easeOut" }}
+            className="flex flex-col items-center gap-8"
           >
-            <p className="text-[10px] sm:text-xs font-bold text-white/30 tracking-[0.6em] uppercase">
-              AI Engineer | <span className="text-hyper">Autonomous Architect</span>
+            <p className="text-[10px] sm:text-xs font-bold text-white/20 tracking-[0.8em] uppercase ml-[0.8em]">
+              AI Engineer | <span className="text-hyper/60">Autonomous Architect</span>
             </p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-              className="mt-4"
+              transition={{ duration: 1, delay: 2.2 }}
             >
               <LiquidButton 
-                className="w-auto px-8 py-2 text-[10px] h-10 min-w-[180px]"
+                className="w-auto px-10 py-3 text-[10px] h-12 min-w-[200px]"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Access Systems <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                Access Systems <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </LiquidButton>
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] bg-electric/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background Ambience: Subtle Sidewave glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
       
-      {/* Refined scroll indicator */}
+      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        animate={{ opacity: 0.15 }}
+        transition={{ delay: 3 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent" />
       </motion.div>
     </section>
   );
