@@ -1,9 +1,11 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal as TerminalIcon, Github, Linkedin, Mail, Send, Loader2 } from 'lucide-react';
+import { Terminal as TerminalIcon, Github, Linkedin, Mail, Send, Loader2, Copy, Check } from 'lucide-react';
 import { aiArchitectureChatTerminal } from '@/ai/flows/ai-architecture-chat-terminal-flow';
+import { useToast } from '@/hooks/use-toast';
 
 export const TerminalFooter: React.FC = () => {
   const [input, setInput] = useState('');
@@ -15,7 +17,12 @@ export const TerminalFooter: React.FC = () => {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [terminalDimensions, setTerminalDimensions] = useState('80x24');
+  const [isEmailHovered, setIsEmailHovered] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const { toast } = useToast();
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const email = "selvahari399@gmail.com";
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -52,10 +59,20 @@ export const TerminalFooter: React.FC = () => {
     }
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email);
+    setIsCopied(true);
+    toast({
+      title: "Email Copied",
+      description: "Address copied to clipboard successfully.",
+    });
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
   return (
     <footer className="py-12 md:py-20 px-4 md:px-6 bg-black relative">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-10 md:mb-12 flex flex-col md:row items-center justify-between gap-8 text-center md:text-left">
+        <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl md:text-4xl font-black tracking-[0.15em] uppercase">
               INITIALIZE <span className="text-fire">COLLABORATION</span>
@@ -64,7 +81,7 @@ export const TerminalFooter: React.FC = () => {
               Ready to engineer the next intelligence paradigm.
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <motion.a 
               whileHover={{ 
                 scale: 1.15, 
@@ -95,19 +112,44 @@ export const TerminalFooter: React.FC = () => {
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
-            <motion.a 
-              whileHover={{ 
-                scale: 1.15, 
-                backgroundColor: "rgba(255, 87, 34, 0.2)",
-                boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
-              }}
-              whileTap={{ scale: 0.9 }}
-              href="mailto:selvahari399@gmail.com" 
-              className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300" 
-              aria-label="Email"
-            >
-              <Mail className="w-6 h-6" />
-            </motion.a>
+            
+            <div className="relative">
+              <AnimatePresence>
+                {isEmailHovered && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: -50, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute left-1/2 -translate-x-1/2 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full whitespace-nowrap z-50 flex items-center gap-3 shadow-2xl"
+                  >
+                    <span className="text-[10px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
+                    <button 
+                      onClick={copyToClipboard}
+                      className="p-1.5 hover:bg-white/10 rounded-full transition-colors text-white/60"
+                      title="Copy Email"
+                    >
+                      {isCopied ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3" />}
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              
+              <motion.a 
+                onMouseEnter={() => setIsEmailHovered(true)}
+                onMouseLeave={() => setIsEmailHovered(false)}
+                whileHover={{ 
+                  scale: 1.15, 
+                  backgroundColor: "rgba(255, 87, 34, 0.2)",
+                  boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                }}
+                whileTap={{ scale: 0.9 }}
+                href={`mailto:${email}`}
+                className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
+                aria-label="Email"
+              >
+                <Mail className="w-6 h-6" />
+              </motion.a>
+            </div>
           </div>
         </div>
 
