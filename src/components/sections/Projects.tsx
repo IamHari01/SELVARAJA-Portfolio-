@@ -16,7 +16,7 @@ const projects = [
     features: ['Multi-agent node graph', 'Semantic logic matching', 'Real-time orchestration', 'ATS Intelligence'],
     placeholderId: 'project-agent',
     color: 'fire',
-    liveUrl: '#',
+    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
     repoUrl: 'https://github.com/IamHari01'
   },
   {
