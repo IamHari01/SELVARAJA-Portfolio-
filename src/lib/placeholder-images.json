@@ -2,15 +2,15 @@
   "placeholderImages": [
     {
       "id": "project-agent",
-      "description": "Autonomous AI agent system visualization with neural nodes",
-      "imageUrl": "https://picsum.photos/seed/ai-agent-v2/1200/800",
+      "description": "High-fidelity cybernetic artificial intelligence and neural nodes",
+      "imageUrl": "https://picsum.photos/seed/ai-neural-eye/1200/800",
       "imageHint": "artificial intelligence"
     },
     {
       "id": "project-voting",
-      "description": "Decentralized blockchain network and cryptographic ledger nodes",
-      "imageUrl": "https://picsum.photos/seed/blockchain-network/1200/800",
-      "imageHint": "blockchain technology"
+      "description": "Professional Bitcoin cryptocurrency and cryptographic ledger visualization",
+      "imageUrl": "https://picsum.photos/seed/bitcoin-crypto-gold/1200/800",
+      "imageHint": "bitcoin cryptocurrency"
     }
   ]
 }
