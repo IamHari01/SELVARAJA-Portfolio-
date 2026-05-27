@@ -21,7 +21,7 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 200 };
+  const springConfig = { damping: 20, stiffness: 300 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
@@ -30,8 +30,8 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
     const rect = buttonRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    x.set((e.clientX - centerX) * 0.2);
-    y.set((e.clientY - centerY) * 0.2);
+    x.set((e.clientX - centerX) * 0.3);
+    y.set((e.clientY - centerY) * 0.3);
   };
 
   const handleMouseLeave = () => {
@@ -50,10 +50,10 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       className={cn(
-        "relative group py-2.5 rounded-full font-bold transition-all duration-500",
-        "flex items-center justify-center gap-2 overflow-hidden text-[10px] uppercase tracking-[0.2em]",
+        "relative group py-2 rounded-full font-black transition-all duration-300",
+        "flex items-center justify-center gap-2 overflow-hidden text-[9px] uppercase tracking-[0.25em]",
         isPrimary 
-          ? "bg-fire text-black shadow-[0_0_20px_rgba(255,87,34,0.3)] hover:shadow-[0_0_40px_rgba(255,87,34,0.6)]" 
+          ? "bg-fire text-black shadow-[0_0_15px_rgba(255,87,34,0.4)] hover:shadow-[0_0_30px_rgba(255,87,34,0.7)]" 
           : "bg-white/5 border border-white/10 text-white backdrop-blur-md hover:bg-white/10",
         className
       )}
@@ -64,8 +64,8 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
         animate={{
           background: isHovered 
             ? isPrimary 
-              ? 'radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%)'
-              : 'radial-gradient(circle at center, rgba(255,87,34,0.15) 0%, transparent 70%)'
+              ? 'radial-gradient(circle at center, rgba(255,255,255,0.5) 0%, transparent 70%)'
+              : 'radial-gradient(circle at center, rgba(255,87,34,0.2) 0%, transparent 70%)'
             : 'none'
         }}
       />
