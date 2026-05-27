@@ -51,9 +51,9 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
       style={{ x: springX, y: springY }}
       className={cn(
         "relative group py-2.5 rounded-full font-bold transition-all duration-500",
-        "flex items-center justify-center gap-2 overflow-hidden text-[11px] md:text-xs uppercase tracking-[0.2em]",
+        "flex items-center justify-center gap-2 overflow-hidden text-[10px] uppercase tracking-[0.2em]",
         isPrimary 
-          ? "bg-amber text-black shadow-[0_0_20px_rgba(255,165,0,0.3)] hover:shadow-[0_0_40px_rgba(255,165,0,0.6)]" 
+          ? "bg-fire text-black shadow-[0_0_20px_rgba(255,87,34,0.3)] hover:shadow-[0_0_40px_rgba(255,87,34,0.6)]" 
           : "bg-white/5 border border-white/10 text-white backdrop-blur-md hover:bg-white/10",
         className
       )}
@@ -64,8 +64,8 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
         animate={{
           background: isHovered 
             ? isPrimary 
-              ? 'radial-gradient(circle at center, rgba(255,255,255,0.6) 0%, transparent 70%)'
-              : 'radial-gradient(circle at center, rgba(255,165,0,0.2) 0%, transparent 70%)'
+              ? 'radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%)'
+              : 'radial-gradient(circle at center, rgba(255,87,34,0.15) 0%, transparent 70%)'
             : 'none'
         }}
       />

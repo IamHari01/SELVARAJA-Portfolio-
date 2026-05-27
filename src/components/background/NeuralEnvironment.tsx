@@ -17,7 +17,7 @@ export const NeuralEnvironment: React.FC = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     containerRef.current.appendChild(renderer.domElement);
 
-    const particlesCount = 1500;
+    const particlesCount = 2000;
     const posArray = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount * 3; i++) {
@@ -28,10 +28,10 @@ export const NeuralEnvironment: React.FC = () => {
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
     const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.005,
-      color: 0xffa000, // Firebase Orange
+      size: 0.004,
+      color: 0xff3d00, // Intensified Orangish-Red
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.35,
       blending: THREE.AdditiveBlending
     });
 
@@ -44,15 +44,15 @@ export const NeuralEnvironment: React.FC = () => {
       const mouseX = (event.clientX / window.innerWidth) - 0.5;
       const mouseY = (event.clientY / window.innerHeight) - 0.5;
       
-      particlesMesh.rotation.x = mouseY * 0.1;
-      particlesMesh.rotation.y = mouseX * 0.1;
+      particlesMesh.rotation.x = mouseY * 0.15;
+      particlesMesh.rotation.y = mouseX * 0.15;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
     const animate = () => {
       requestAnimationFrame(animate);
-      particlesMesh.rotation.y += 0.0008;
+      particlesMesh.rotation.y += 0.0006;
       renderer.render(scene, camera);
     };
 
@@ -76,8 +76,8 @@ export const NeuralEnvironment: React.FC = () => {
   return (
     <div 
       ref={containerRef} 
-      className="fixed inset-0 pointer-events-none z-[-1] opacity-60"
-      style={{ background: 'radial-gradient(circle at 50% 50%, #1a1200 0%, #000000 100%)' }}
+      className="fixed inset-0 pointer-events-none z-[-1] opacity-70"
+      style={{ background: 'radial-gradient(circle at 50% 50%, #1a0300 0%, #000000 100%)' }}
     />
   );
 };

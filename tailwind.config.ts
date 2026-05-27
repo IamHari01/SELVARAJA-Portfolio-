@@ -65,10 +65,10 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        fire: '#FF8A00',
-        amber: '#FFCA28',
-        lava: '#F57C00',
-        ember: '#FF4E00',
+        fire: '#FF5722', // Deep Red-Orange
+        amber: '#FF7043', // Light Red-Orange
+        lava: '#D84315', // Dark Red-Orange
+        ember: '#BF360C', // Very Dark Red-Orange
       },
       borderRadius: {
         lg: 'var(--radius)',

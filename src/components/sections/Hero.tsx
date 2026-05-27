@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
           className="relative inline-block w-full"
         >
           <motion.h1
-            className="text-[16vw] sm:text-[14vw] md:text-[12rem] lg:text-[15rem] font-black tracking-[-0.05em] leading-none mb-8 text-white uppercase whitespace-nowrap flex justify-center items-center w-full"
+            className="text-[16vw] sm:text-[14vw] md:text-[12rem] lg:text-[15rem] font-black tracking-[-0.05em] leading-none mb-8 text-white uppercase whitespace-nowrap flex justify-center items-center w-full select-none"
             style={{ 
               fontFamily: "'Inter Tight', sans-serif",
               fontStretch: 'expanded'
@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
             className="flex flex-col items-center gap-8"
           >
             <p className="text-[10px] sm:text-xs font-bold text-white/20 tracking-[0.8em] uppercase ml-[0.8em]">
-              AI Engineer | <span className="text-amber/60">Autonomous Architect</span>
+              AI Engineer | <span className="text-fire/60">Autonomous Architect</span>
             </p>
 
             <motion.div
@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
               transition={{ duration: 1, delay: 2.2 }}
             >
               <LiquidButton 
-                className="w-auto px-10 py-3 text-[10px] h-12 min-w-[200px]"
+                className="w-auto px-10 py-3 text-[10px] h-10 min-w-[180px]"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Access Systems <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

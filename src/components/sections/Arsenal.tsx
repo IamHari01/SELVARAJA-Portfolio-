@@ -38,9 +38,9 @@ export const Arsenal: React.FC = () => {
 
     const spheres: THREE.Mesh[] = [];
     categories.forEach((_, i) => {
-      const geometry = new THREE.SphereGeometry(0.1, 32, 32);
+      const geometry = new THREE.SphereGeometry(0.12, 32, 32);
       const material = new THREE.MeshBasicMaterial({ 
-        color: i % 2 === 0 ? 0xff8a00 : 0xffca28, // Orange or Amber
+        color: i % 2 === 0 ? 0xff3d00 : 0xd84315, // Using Lava and Fire colors
         transparent: true,
         opacity: 0.8
       });
@@ -49,7 +49,7 @@ export const Arsenal: React.FC = () => {
       const phi = Math.acos(-1 + (2 * i) / categories.length);
       const theta = Math.sqrt(categories.length * Math.PI) * phi;
       
-      const radius = window.innerWidth < 768 ? 1.5 : 2;
+      const radius = 2.2;
       sphere.position.set(
         radius * Math.cos(theta) * Math.sin(phi),
         radius * Math.sin(theta) * Math.sin(phi),
@@ -64,8 +64,8 @@ export const Arsenal: React.FC = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      group.rotation.y += 0.002;
-      group.rotation.x += 0.001;
+      group.rotation.y += 0.0025;
+      group.rotation.x += 0.0012;
       renderer.render(scene, camera);
     };
 
@@ -99,7 +99,7 @@ export const Arsenal: React.FC = () => {
           COGNITIVE <span className="text-fire">ARSENAL</span>
         </motion.h2>
         <p className="text-white/40 max-w-2xl mx-auto text-base md:text-lg px-4">
-          Not just tools, but mental models. A distributed system of intelligence nodes orbiting a central thesis of autonomous innovation.
+          A distributed intelligence node architecture orbiting a central thesis of autonomous innovation.
         </p>
       </div>
 
@@ -114,7 +114,7 @@ export const Arsenal: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.05 }}
-                className="glass-panel p-3 md:p-4 rounded-xl border-white/5 text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white hover:border-fire/20 transition-all cursor-default text-center flex items-center justify-center min-h-[50px] md:min-h-[60px]"
+                className="glass-panel p-3 md:p-4 rounded-xl border-white/5 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white hover:border-fire/30 transition-all cursor-default text-center flex items-center justify-center min-h-[50px] md:min-h-[60px]"
               >
                 {cat}
               </motion.div>
