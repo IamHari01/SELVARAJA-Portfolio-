@@ -57,7 +57,7 @@ export const TerminalFooter: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-2xl md:text-3xl font-black tracking-tighter mb-2">INITIALIZE COLLABORATION.</h3>
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight mb-2">INITIALIZE COLLABORATION.</h3>
             <p className="text-white/80 text-sm md:text-base">Ready to engineer the next intelligence paradigm.</p>
           </div>
           <div className="flex gap-3 md:gap-4">

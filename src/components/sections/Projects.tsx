@@ -38,7 +38,7 @@ export const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-black mb-4 tracking-tighter"
+              className="text-5xl md:text-7xl font-black mb-4 tracking-tight"
             >
               PROJECT <span className="text-fire">ARCHITECTURE</span>
             </motion.h2>

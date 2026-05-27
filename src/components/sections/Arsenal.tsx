@@ -94,7 +94,7 @@ export const Arsenal: React.FC = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-black mb-4 tracking-tighter"
+          className="text-4xl md:text-6xl font-black mb-4 tracking-tight"
         >
           COGNITIVE <span className="text-fire">ARSENAL</span>
         </motion.h2>
