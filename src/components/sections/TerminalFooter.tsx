@@ -1,9 +1,8 @@
-
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal as TerminalIcon, Github, Linkedin, Mail, Send, Loader2, Copy, Check } from 'lucide-react';
+import { Terminal as TerminalIcon, Github, Linkedin, Mail, Phone, Send, Loader2, Copy, Check } from 'lucide-react';
 import { aiArchitectureChatTerminal } from '@/ai/flows/ai-architecture-chat-terminal-flow';
 import { useToast } from '@/hooks/use-toast';
 
@@ -17,12 +16,18 @@ export const TerminalFooter: React.FC = () => {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [terminalDimensions, setTerminalDimensions] = useState('80x24');
+  
   const [isEmailHovered, setIsEmailHovered] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
+  const [isPhoneHovered, setIsPhoneHovered] = useState(false);
+  
+  const [isEmailCopied, setIsEmailCopied] = useState(false);
+  const [isPhoneCopied, setIsPhoneCopied] = useState(false);
+  
   const { toast } = useToast();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const email = "selvahari399@gmail.com";
+  const phoneNumber = "+91 00000 00000"; // Placeholder: Update with your actual mobile number
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -59,16 +64,23 @@ export const TerminalFooter: React.FC = () => {
     }
   };
 
-  const copyToClipboard = (e: React.MouseEvent) => {
+  const copyToClipboard = (e: React.MouseEvent, text: string, type: 'email' | 'phone') => {
     e.preventDefault();
     e.stopPropagation();
-    navigator.clipboard.writeText(email);
-    setIsCopied(true);
+    navigator.clipboard.writeText(text);
+    
+    if (type === 'email') {
+      setIsEmailCopied(true);
+      setTimeout(() => setIsEmailCopied(false), 2000);
+    } else {
+      setIsPhoneCopied(true);
+      setTimeout(() => setIsPhoneCopied(false), 2000);
+    }
+
     toast({
-      title: "Email Copied",
-      description: "Address copied to clipboard successfully.",
+      title: `${type.charAt(0).toUpperCase() + type.slice(1)} Copied`,
+      description: `${text} copied to clipboard.`,
     });
-    setTimeout(() => setIsCopied(false), 2000);
   };
 
   return (
@@ -83,7 +95,7 @@ export const TerminalFooter: React.FC = () => {
               Ready to engineer the next intelligence paradigm.
             </p>
           </div>
-          <div className="flex gap-6 items-center">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 items-center">
             <motion.a 
               whileHover={{ 
                 scale: 1.15, 
@@ -115,6 +127,48 @@ export const TerminalFooter: React.FC = () => {
               <Linkedin className="w-6 h-6" />
             </motion.a>
             
+            {/* Phone Icon with Reveal Pill */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsPhoneHovered(true)}
+              onMouseLeave={() => setIsPhoneHovered(false)}
+            >
+              <AnimatePresence>
+                {isPhoneHovered && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: -60, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900 border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                  >
+                    <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{phoneNumber}</span>
+                    <button 
+                      onClick={(e) => copyToClipboard(e, phoneNumber, 'phone')}
+                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
+                      title="Copy Phone"
+                    >
+                      {isPhoneCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              
+              <motion.a 
+                whileHover={{ 
+                  scale: 1.15, 
+                  backgroundColor: "rgba(255, 87, 34, 0.2)",
+                  boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                }}
+                whileTap={{ scale: 0.9 }}
+                href={`tel:${phoneNumber.replace(/\s+/g, '')}`}
+                className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
+                aria-label="Phone"
+              >
+                <Phone className="w-6 h-6" />
+              </motion.a>
+            </div>
+
+            {/* Email Icon with Reveal Pill */}
             <div 
               className="relative"
               onMouseEnter={() => setIsEmailHovered(true)}
@@ -126,15 +180,15 @@ export const TerminalFooter: React.FC = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: -60, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900/90 backdrop-blur-2xl border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900 border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
                   >
                     <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
                     <button 
-                      onClick={copyToClipboard}
+                      onClick={(e) => copyToClipboard(e, email, 'email')}
                       className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
                       title="Copy Email"
                     >
-                      {isCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+                      {isEmailCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </motion.div>
                 )}
