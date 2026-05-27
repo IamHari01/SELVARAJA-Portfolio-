@@ -10,7 +10,7 @@ import Image from 'next/image';
 const projects = [
   {
     id: 'project-agent',
-    title: 'Autonomous Multi-Agent Orchestrator',
+    title: 'Autonomous Multi-Agent Resume Orchestrator',
     description: 'A high-fidelity reasoning engine that automates complex decision-making through distributed intelligence nodes.',
     tech: ['Python', 'LangGraph', 'Weaviate', 'Gemini', 'Firebase', 'RAG'],
     features: ['Multi-agent node graph', 'Semantic logic matching', 'Real-time orchestration', 'ATS Intelligence'],

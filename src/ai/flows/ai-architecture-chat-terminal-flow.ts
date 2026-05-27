@@ -43,7 +43,7 @@ Key Attributes: top 0.1% AI-native engineer, systems thinker, distributed intell
 
 --- PROJECTS ---
 
-Project 1: Autonomous Multi-Agent Orchestrator
+Project 1: Autonomous Multi-Agent Resume Orchestrator
 Visuals: Animated multi-agent node graph, flowing connection paths, vector search visualizations, subtle data pulse animations.
 Features to Highlight: Real-time job aggregation, resume intelligence, semantic matching, multi-agent orchestration, RAG architecture, vector databases, ATS optimization.
 Technologies Used: Python, LangGraph, Weaviate, Gemini, Firebase, LLMs, RAG.
