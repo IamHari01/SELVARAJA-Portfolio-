@@ -59,7 +59,9 @@ export const TerminalFooter: React.FC = () => {
     }
   };
 
-  const copyToClipboard = () => {
+  const copyToClipboard = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     navigator.clipboard.writeText(email);
     setIsCopied(true);
     toast({
@@ -113,30 +115,32 @@ export const TerminalFooter: React.FC = () => {
               <Linkedin className="w-6 h-6" />
             </motion.a>
             
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsEmailHovered(true)}
+              onMouseLeave={() => setIsEmailHovered(false)}
+            >
               <AnimatePresence>
                 {isEmailHovered && (
                   <motion.div
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: -50, scale: 1 }}
+                    animate={{ opacity: 1, y: -60, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full whitespace-nowrap z-50 flex items-center gap-3 shadow-2xl"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900/90 backdrop-blur-2xl border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                   >
-                    <span className="text-[10px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
+                    <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
                     <button 
                       onClick={copyToClipboard}
-                      className="p-1.5 hover:bg-white/10 rounded-full transition-colors text-white/60"
+                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
                       title="Copy Email"
                     >
-                      {isCopied ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3" />}
+                      {isCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </motion.div>
                 )}
               </AnimatePresence>
               
               <motion.a 
-                onMouseEnter={() => setIsEmailHovered(true)}
-                onMouseLeave={() => setIsEmailHovered(false)}
                 whileHover={{ 
                   scale: 1.15, 
                   backgroundColor: "rgba(255, 87, 34, 0.2)",
