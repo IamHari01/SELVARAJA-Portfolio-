@@ -78,24 +78,6 @@ export const Projects: React.FC = () => {
                       className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-60 group-hover:opacity-90"
                       data-ai-hint={imageData?.imageHint}
                     />
-                    
-                    {/* Centered Node Logo Overlay - Inspired by reference image */}
-                    <div className="absolute inset-0 z-20 flex items-center justify-center">
-                      <motion.div 
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-black/40 backdrop-blur-3xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:border-fire/50 transition-colors duration-500"
-                      >
-                        <div className="relative">
-                          {/* Custom SVG Node Logo from reference */}
-                          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-fire animate-pulse">
-                            <rect x="22" y="8" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="2.5"/>
-                            <rect x="8" y="22" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="2.5"/>
-                            <path d="M18 27H23C25.2091 27 27 25.2091 27 23V18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-                          </svg>
-                        </div>
-                      </motion.div>
-                    </div>
                   </div>
                 </div>
 
