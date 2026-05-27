@@ -2,15 +2,15 @@
   "placeholderImages": [
     {
       "id": "project-agent",
-      "description": "Cinematic reflection of autonomous systems with agentic nodes",
-      "imageUrl": "https://picsum.photos/seed/cinematic-agent/1200/800",
-      "imageHint": "cinematic reflection"
+      "description": "Autonomous AI agent system visualization with neural nodes",
+      "imageUrl": "https://picsum.photos/seed/ai-agent-v2/1200/800",
+      "imageHint": "artificial intelligence"
     },
     {
       "id": "project-voting",
-      "description": "Cryptographic architecture with secure node synchronization",
-      "imageUrl": "https://picsum.photos/seed/crypto-secure/1200/800",
-      "imageHint": "security architecture"
+      "description": "Decentralized blockchain network and cryptographic ledger nodes",
+      "imageUrl": "https://picsum.photos/seed/blockchain-network/1200/800",
+      "imageHint": "blockchain technology"
     }
   ]
 }
