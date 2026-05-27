@@ -13,8 +13,8 @@ export const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.06,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
       },
     },
   };
@@ -22,8 +22,8 @@ export const Hero: React.FC = () => {
   const letterVariants = {
     hidden: { 
       opacity: 0, 
-      y: 100,
-      scale: 2,
+      y: 80,
+      scale: 0.8,
       filter: 'blur(20px)',
     },
     visible: { 
@@ -32,26 +32,27 @@ export const Hero: React.FC = () => {
       scale: 1,
       filter: 'blur(0px)',
       transition: {
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 1.5,
+        ease: [0.16, 1, 0.3, 1], // Apple-style cubic bezier
       },
     },
   };
 
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden bg-transparent">
-      <div className="max-w-[100vw] w-full text-center z-10 px-4">
+      <div className="max-w-full w-full text-center z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative inline-block w-full"
+          className="relative inline-flex flex-nowrap items-center justify-center w-full"
         >
-          <motion.h1
-            className="text-[clamp(3.5rem,14vw,15rem)] font-black tracking-[-0.05em] leading-none mb-10 text-white uppercase whitespace-nowrap flex justify-center items-center w-full select-none"
+          <h1
+            className="text-[clamp(2.5rem,16vw,18rem)] font-black tracking-[-0.06em] leading-none mb-12 text-white uppercase whitespace-nowrap flex select-none"
             style={{ 
               fontFamily: "'Inter Tight', sans-serif",
-              fontStretch: 'expanded'
+              fontStretch: 'expanded',
+              WebkitTextStroke: '1px rgba(255,255,255,0.05)'
             }}
           >
             {name.split('').map((char, index) => (
@@ -63,43 +64,51 @@ export const Hero: React.FC = () => {
                 {char}
               </motion.span>
             ))}
-          </motion.h1>
+          </h1>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1.8, ease: "easeOut" }}
+          className="flex flex-col items-center gap-10"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-[9px] md:text-[11px] font-bold text-fire tracking-[0.6em] uppercase ml-[0.6em]">
+              AI Engineer
+            </span>
+            <div className="w-12 h-[1px] bg-fire/30" />
+            <span className="text-[9px] md:text-[11px] font-bold text-white/30 tracking-[0.6em] uppercase ml-[0.6em]">
+              Autonomous Architect
+            </span>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-            className="flex flex-col items-center gap-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 2.2 }}
           >
-            <p className="text-[10px] md:text-xs font-bold text-white/30 tracking-[0.8em] uppercase ml-[0.8em]">
-              AI Engineer | <span className="text-fire">Autonomous Architect</span>
-            </p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+            <LiquidButton 
+              className="w-auto px-10 py-3 text-[10px] h-10 min-w-[180px] hover:scale-105 transition-transform"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <LiquidButton 
-                className="w-auto px-8 py-2.5 text-[9px] h-9 min-w-[160px]"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Access Systems <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </LiquidButton>
-            </motion.div>
+              Access Systems <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            </LiquidButton>
           </motion.div>
         </motion.div>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
+      {/* Decorative Focal Point */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] bg-fire/5 rounded-full blur-[150px] pointer-events-none animate-pulse-glow" />
       
+      {/* Scroll Indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ delay: 2 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ delay: 3 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
       >
-        <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-[1px] h-20 bg-gradient-to-b from-fire to-transparent" />
       </motion.div>
     </section>
   );
