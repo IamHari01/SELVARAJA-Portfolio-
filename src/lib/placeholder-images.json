@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "project-agent",
+      "description": "Autonomous Multi-agent Network",
+      "imageUrl": "https://picsum.photos/seed/ai-agent/1200/800",
+      "imageHint": "AI network"
+    },
+    {
+      "id": "project-voting",
+      "description": "Decentralized Blockchain Nodes",
+      "imageUrl": "https://picsum.photos/seed/blockchain/1200/800",
+      "imageHint": "blockchain abstract"
+    }
+  ]
 }
