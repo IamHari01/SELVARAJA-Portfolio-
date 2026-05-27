@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -20,7 +19,7 @@ const projects = [
   },
   {
     id: 'project-voting',
-    title: 'Decentralized Trust Architecture',
+    title: 'Decentralised Voting Architecture',
     description: 'An immutable cryptographic ledger designed for absolute security and autonomous verification in distributed networks.',
     tech: ['Solidity', 'Ethereum', 'Web3', 'Smart Contracts', 'Blockchain'],
     features: ['Immutable protocol', 'Zero-knowledge proofs', 'Ethereum Mainnet', 'Secure consensus'],

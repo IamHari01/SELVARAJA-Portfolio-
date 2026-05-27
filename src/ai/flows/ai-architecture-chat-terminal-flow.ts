@@ -43,13 +43,13 @@ Key Attributes: top 0.1% AI-native engineer, systems thinker, distributed intell
 
 --- PROJECTS ---
 
-Project 1: Autonomous Job Application AI Agent
+Project 1: Autonomous Multi-Agent Orchestrator
 Visuals: Animated multi-agent node graph, flowing connection paths, vector search visualizations, subtle data pulse animations.
 Features to Highlight: Real-time job aggregation, resume intelligence, semantic matching, multi-agent orchestration, RAG architecture, vector databases, ATS optimization.
 Technologies Used: Python, LangGraph, Weaviate, Gemini, Firebase, LLMs, RAG.
 Architectural Decisions: Focus on modularity for agent orchestration, scalable vector database for semantic matching, robust RAG for context retrieval, and cloud-native deployment with Firebase.
 
-Project 2: Decentralized Voting System
+Project 2: Decentralised Voting Architecture
 Visuals: Cryptographic geometric shaders, blockchain-inspired grid systems, immutable ledger visualization, secure node synchronization effects.
 Focus Areas: Ethereum architecture, decentralized security, smart contract reliability, vulnerability mitigation.
 Technologies Used: Solidity, Ethereum, Web3, Smart Contracts, Blockchain.

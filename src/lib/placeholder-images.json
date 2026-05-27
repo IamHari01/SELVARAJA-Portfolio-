@@ -3,13 +3,13 @@
     {
       "id": "project-agent",
       "description": "High-fidelity cybernetic artificial intelligence and neural nodes",
-      "imageUrl": "https://picsum.photos/seed/ai-neural-eye/1200/800",
+      "imageUrl": "https://i.pinimg.com/1200x/37/42/08/374208ff04d5972d8e912ae4fd814b1e.jpg",
       "imageHint": "artificial intelligence"
     },
     {
       "id": "project-voting",
       "description": "Professional Bitcoin cryptocurrency and cryptographic ledger visualization",
-      "imageUrl": "https://picsum.photos/seed/bitcoin-crypto-gold/1200/800",
+      "imageUrl": "https://i.pinimg.com/736x/f4/56/bf/f456bf1b6bbc2cbe142502edf9ef559d.jpg",
       "imageHint": "bitcoin cryptocurrency"
     }
   ]
