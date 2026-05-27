@@ -1,28 +1,29 @@
+
 "use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ExternalLink, Github, Code2, Workflow } from 'lucide-react';
+import { ExternalLink, Github, Code2, Workflow, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
 const projects = [
   {
     id: 'project-agent',
-    title: 'Autonomous Job Application AI Agent',
-    description: 'A multi-agent orchestration system that automates the entire job search lifecycle.',
-    tech: ['Python', 'LangGraph', 'Weaviate', 'Gemini', 'Firebase', 'LLMs', 'RAG'],
-    features: ['Multi-agent node graph', 'Semantic matching', 'Real-time job aggregation', 'ATS Optimization'],
+    title: 'Autonomous Multi-Agent Orchestrator',
+    description: 'A high-fidelity reasoning engine that automates complex decision-making through distributed intelligence nodes.',
+    tech: ['Python', 'LangGraph', 'Weaviate', 'Gemini', 'Firebase', 'RAG'],
+    features: ['Multi-agent node graph', 'Semantic logic matching', 'Real-time orchestration', 'ATS Intelligence'],
     placeholderId: 'project-agent',
     color: 'fire'
   },
   {
     id: 'project-voting',
-    title: 'Decentralized Voting System',
-    description: 'Cryptographically secure, blockchain-based voting architecture focused on security.',
+    title: 'Decentralized Trust Architecture',
+    description: 'An immutable cryptographic ledger designed for absolute security and autonomous verification in distributed networks.',
     tech: ['Solidity', 'Ethereum', 'Web3', 'Smart Contracts', 'Blockchain'],
-    features: ['Immutable ledger', 'Vulnerability mitigation', 'Ethereum architecture', 'Node synchronization'],
+    features: ['Immutable protocol', 'Zero-knowledge proofs', 'Ethereum Mainnet', 'Secure consensus'],
     placeholderId: 'project-voting',
     color: 'amber'
   }
@@ -38,90 +39,102 @@ export const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-black mb-4 tracking-tight"
+              className="text-5xl md:text-8xl font-black mb-6 tracking-tighter"
             >
-              PROJECT <span className="text-fire">ARCHITECTURE</span>
+              PROJECT <span className="text-fire">DNA</span>
             </motion.h2>
+            <p className="text-white/40 max-w-xl text-lg font-medium leading-relaxed">
+              Engineering the next generation of autonomous intelligence through modular, scalable, and decentralized architecture.
+            </p>
           </div>
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-right hidden md:block"
           >
-            <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/20">System Status: Optimized</span>
+            <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/20">Status: System Optimized</span>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 gap-32 md:gap-48">
+        <div className="grid grid-cols-1 gap-40 md:gap-64">
           {projects.map((project, idx) => {
             const imageData = PlaceHolderImages.find(img => img.id === project.placeholderId);
             return (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 80 }}
+                initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center"
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center"
               >
-                <div className={idx % 2 === 0 ? "order-2 lg:order-1" : "order-2"}>
-                  <div className="glass-panel p-8 md:p-14 rounded-[2.5rem] relative overflow-hidden fresnel-glow">
-                    <div className="absolute top-0 right-0 p-6 opacity-5 md:opacity-20">
-                      <Code2 className="text-white/40 w-12 h-12 md:w-16 md:h-16" />
-                    </div>
+                <div className={`lg:col-span-6 ${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.8)] fresnel-glow">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent z-10" />
+                    <Image
+                      src={imageData?.imageUrl || ''}
+                      alt={project.title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-60 group-hover:opacity-90"
+                      data-ai-hint={imageData?.imageHint}
+                    />
                     
-                    <div className="flex flex-wrap gap-2.5 mb-8">
+                    {/* Centered Node Logo Overlay - Inspired by reference image */}
+                    <div className="absolute inset-0 z-20 flex items-center justify-center">
+                      <motion.div 
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-black/40 backdrop-blur-3xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:border-fire/50 transition-colors duration-500"
+                      >
+                        <div className="relative">
+                          {/* Custom SVG Node Logo from reference */}
+                          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-fire animate-pulse">
+                            <rect x="22" y="8" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="2.5"/>
+                            <rect x="8" y="22" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="2.5"/>
+                            <path d="M18 27H23C25.2091 27 27 25.2091 27 23V18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`lg:col-span-6 ${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+                  <div className="flex flex-col gap-8">
+                    <div className="flex flex-wrap gap-2">
                       {project.tech.map(t => (
-                        <Badge key={t} variant="secondary" className="bg-white/5 border-white/10 text-[9px] uppercase font-bold tracking-[0.2em] px-3 py-1 text-amber/80">
+                        <Badge key={t} variant="outline" className="border-white/10 text-[9px] uppercase font-bold tracking-[0.2em] px-4 py-1.5 text-fire/80 hover:border-fire/30 transition-colors">
                           {t}
                         </Badge>
                       ))}
                     </div>
 
-                    <h3 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">
+                    <h3 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                       {project.title}
                     </h3>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    <p className="text-white/50 text-base md:text-xl font-medium leading-relaxed max-w-lg">
+                      {project.description}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 mb-4">
                       {project.features.map(f => (
-                        <div key={f} className="flex items-center gap-4 text-xs md:text-sm text-white/40">
-                          <Workflow className="w-5 h-5 text-fire shrink-0 opacity-60" />
+                        <div key={f} className="flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-widest text-white/30 group-hover:text-white/60 transition-colors">
+                          <div className="w-1.5 h-1.5 rounded-full bg-fire shadow-[0_0_10px_rgba(255,87,34,0.8)]" />
                           <span>{f}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-5">
-                      <button className="flex-1 flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-bold text-xs uppercase tracking-widest">
-                        <Github className="w-4 h-4" /> Codebase
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <button className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-fire text-black font-black text-xs uppercase tracking-[0.2em] shadow-lg shadow-fire/20 hover:shadow-fire/40 transition-all hover:-translate-y-1">
+                        Systems Access <ArrowUpRight className="w-4 h-4" />
                       </button>
-                      <button className="flex-1 flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-fire/10 text-fire hover:bg-fire/20 transition-all font-bold text-xs uppercase tracking-widest border border-fire/20">
-                        <ExternalLink className="w-4 h-4" /> Live System
+                      <button className="flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 font-black text-xs uppercase tracking-[0.2em] transition-all">
+                        <Github className="w-4 h-4" /> Protocol
                       </button>
                     </div>
                   </div>
-                </div>
-
-                <div className={idx % 2 === 0 ? "order-1 lg:order-2" : "order-1"}>
-                  <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)]"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/20 to-transparent z-10" />
-                    <Image
-                      src={imageData?.imageUrl || ''}
-                      alt={project.title}
-                      fill
-                      className="object-cover opacity-50 grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-80"
-                      data-ai-hint={imageData?.imageHint}
-                    />
-                    <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700">
-                      <div className="p-5 bg-black/40 backdrop-blur-2xl rounded-full border border-white/20 scale-75 group-hover:scale-100 transition-transform duration-700">
-                        <Workflow className="w-12 h-12 text-fire animate-pulse" />
-                      </div>
-                    </div>
-                  </motion.div>
                 </div>
               </motion.div>
             );
