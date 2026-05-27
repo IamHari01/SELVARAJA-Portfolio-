@@ -58,7 +58,7 @@ export const TerminalFooter: React.FC = () => {
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
             <h3 className="text-2xl md:text-3xl font-black tracking-tighter mb-2">INITIALIZE COLLABORATION.</h3>
-            <p className="text-white/60 text-sm md:text-base">Ready to engineer the next intelligence paradigm.</p>
+            <p className="text-white/80 text-sm md:text-base">Ready to engineer the next intelligence paradigm.</p>
           </div>
           <div className="flex gap-3 md:gap-4">
             <a href="https://github.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="Github">
@@ -84,7 +84,7 @@ export const TerminalFooter: React.FC = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
               <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
             </div>
-            <div className="flex items-center gap-2 text-[8px] md:text-[10px] font-bold text-white/40 tracking-widest uppercase">
+            <div className="flex items-center gap-2 text-[8px] md:text-[10px] font-bold text-white/50 tracking-widest uppercase">
               <TerminalIcon className="w-3 h-3" />
               bash — {terminalDimensions}
             </div>
@@ -106,7 +106,7 @@ export const TerminalFooter: React.FC = () => {
                   className="mb-3"
                 >
                   {line.type === 'system' && (
-                    <p className="text-white/50 italic break-words">{line.content}</p>
+                    <p className="text-white/60 italic break-words">{line.content}</p>
                   )}
                   {line.type === 'user' && (
                     <div className="flex gap-2 text-fire">
@@ -125,7 +125,7 @@ export const TerminalFooter: React.FC = () => {
             </AnimatePresence>
             
             {isLoading && (
-              <div className="flex items-center gap-2 text-amber opacity-60">
+              <div className="flex items-center gap-2 text-amber opacity-70">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span>Processing architectural query...</span>
               </div>
@@ -139,12 +139,12 @@ export const TerminalFooter: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Query the architect..."
-              className="flex-1 bg-transparent border-none outline-none text-xs md:text-sm font-code text-white placeholder:text-white/30"
+              className="flex-1 bg-transparent border-none outline-none text-xs md:text-sm font-code text-white placeholder:text-white/40"
               disabled={isLoading}
             />
             <button 
               type="submit" 
-              className="text-white/40 hover:text-white transition-colors"
+              className="text-white/60 hover:text-white transition-colors"
               disabled={isLoading}
             >
               <Send className="w-4 h-4" />
@@ -152,7 +152,7 @@ export const TerminalFooter: React.FC = () => {
           </form>
         </motion.div>
 
-        <div className="mt-10 md:mt-12 text-center text-[8px] md:text-[10px] text-white/50 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
+        <div className="mt-10 md:mt-12 text-center text-[8px] md:text-[10px] text-white/60 font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase px-4">
           &copy; 2026 Selvaraja // Built with Autonomous Pride
         </div>
       </div>
