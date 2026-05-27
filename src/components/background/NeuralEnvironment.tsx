@@ -29,9 +29,9 @@ export const NeuralEnvironment: React.FC = () => {
 
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.005,
-      color: 0x4d9bff,
+      color: 0xffa000, // Firebase Orange
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.3,
       blending: THREE.AdditiveBlending
     });
 
@@ -52,7 +52,7 @@ export const NeuralEnvironment: React.FC = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      particlesMesh.rotation.y += 0.001;
+      particlesMesh.rotation.y += 0.0008;
       renderer.render(scene, camera);
     };
 
@@ -77,7 +77,7 @@ export const NeuralEnvironment: React.FC = () => {
     <div 
       ref={containerRef} 
       className="fixed inset-0 pointer-events-none z-[-1] opacity-60"
-      style={{ background: 'radial-gradient(circle at 50% 50%, #0b0e11 0%, #000000 100%)' }}
+      style={{ background: 'radial-gradient(circle at 50% 50%, #1a1200 0%, #000000 100%)' }}
     />
   );
 };

@@ -40,7 +40,7 @@ export const Arsenal: React.FC = () => {
     categories.forEach((_, i) => {
       const geometry = new THREE.SphereGeometry(0.1, 32, 32);
       const material = new THREE.MeshBasicMaterial({ 
-        color: i % 2 === 0 ? 0x4d9bff : 0xbf4dff,
+        color: i % 2 === 0 ? 0xff8a00 : 0xffca28, // Orange or Amber
         transparent: true,
         opacity: 0.8
       });
@@ -96,7 +96,7 @@ export const Arsenal: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-black mb-4 tracking-tighter"
         >
-          COGNITIVE <span className="text-ultraviolet">ARSENAL</span>
+          COGNITIVE <span className="text-fire">ARSENAL</span>
         </motion.h2>
         <p className="text-white/40 max-w-2xl mx-auto text-base md:text-lg px-4">
           Not just tools, but mental models. A distributed system of intelligence nodes orbiting a central thesis of autonomous innovation.
@@ -114,7 +114,7 @@ export const Arsenal: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.05 }}
-                className="glass-panel p-3 md:p-4 rounded-xl border-white/5 text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white hover:border-white/20 transition-all cursor-default text-center flex items-center justify-center min-h-[50px] md:min-h-[60px]"
+                className="glass-panel p-3 md:p-4 rounded-xl border-white/5 text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white hover:border-fire/20 transition-all cursor-default text-center flex items-center justify-center min-h-[50px] md:min-h-[60px]"
               >
                 {cat}
               </motion.div>

@@ -28,9 +28,7 @@ export const TerminalFooter: React.FC = () => {
       setTerminalDimensions(window.innerWidth < 768 ? '40x12' : '80x24');
     };
     
-    // Set initial dimensions on mount (client-side only)
     handleResize();
-    
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -63,13 +61,13 @@ export const TerminalFooter: React.FC = () => {
             <p className="text-white/40 text-sm md:text-base">Ready to engineer the next intelligence paradigm.</p>
           </div>
           <div className="flex gap-3 md:gap-4">
-            <a href="https://github.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-electric/20 hover:text-electric transition-all" aria-label="Github">
+            <a href="https://github.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="Github">
               <Github className="w-5 h-5 md:w-6 md:h-6" />
             </a>
-            <a href="https://linkedin.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-electric/20 hover:text-electric transition-all" aria-label="LinkedIn">
+            <a href="https://linkedin.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
             </a>
-            <a href="mailto:selvaraja@example.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-electric/20 hover:text-electric transition-all" aria-label="Email">
+            <a href="mailto:selvaraja@example.com" className="p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-fire/20 hover:text-fire transition-all" aria-label="Email">
               <Mail className="w-5 h-5 md:w-6 md:h-6" />
             </a>
           </div>
@@ -80,7 +78,6 @@ export const TerminalFooter: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="glass-panel rounded-xl overflow-hidden shadow-2xl relative border-white/10"
         >
-          {/* Terminal Header */}
           <div className="bg-white/5 px-4 py-2 border-b border-white/10 flex items-center justify-between">
             <div className="flex gap-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
@@ -94,12 +91,11 @@ export const TerminalFooter: React.FC = () => {
             <div className="w-8 md:w-12" />
           </div>
 
-          {/* Terminal Body */}
           <div 
             ref={scrollRef}
             className="p-4 md:p-6 h-[300px] md:h-[400px] overflow-y-auto font-code text-xs md:text-sm leading-relaxed scroll-smooth relative"
           >
-            <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 bg-[length:100%_2px,3px_100%] animate-scanline" />
+            <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,100,0,0.06),rgba(255,200,0,0.02),rgba(255,50,0,0.06))] z-10 bg-[length:100%_2px,3px_100%] animate-scanline" />
             
             <AnimatePresence mode="popLayout">
               {history.map((line, i) => (
@@ -113,14 +109,14 @@ export const TerminalFooter: React.FC = () => {
                     <p className="text-white/40 italic break-words">{line.content}</p>
                   )}
                   {line.type === 'user' && (
-                    <div className="flex gap-2 text-electric">
+                    <div className="flex gap-2 text-fire">
                       <span className="shrink-0">➜</span>
                       <span className="font-bold shrink-0">selvaraja:</span>
                       <span className="break-words">{line.content}</span>
                     </div>
                   )}
                   {line.type === 'ai' && (
-                    <div className="text-hyper mt-1 pl-3 md:pl-4 border-l border-hyper/20 py-1 break-words">
+                    <div className="text-amber mt-1 pl-3 md:pl-4 border-l border-amber/20 py-1 break-words">
                       {line.content}
                     </div>
                   )}
@@ -129,16 +125,15 @@ export const TerminalFooter: React.FC = () => {
             </AnimatePresence>
             
             {isLoading && (
-              <div className="flex items-center gap-2 text-hyper opacity-50">
+              <div className="flex items-center gap-2 text-amber opacity-50">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span>Processing architectural query...</span>
               </div>
             )}
           </div>
 
-          {/* Terminal Input */}
           <form onSubmit={handleCommand} className="p-3 md:p-4 bg-white/5 border-t border-white/10 flex items-center gap-2 md:gap-3">
-            <span className="text-electric font-bold">➜</span>
+            <span className="text-fire font-bold">➜</span>
             <input 
               type="text" 
               value={input}

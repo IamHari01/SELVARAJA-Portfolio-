@@ -8,7 +8,6 @@ import { ChevronRight } from 'lucide-react';
 const name = "SELVARAJA";
 
 export const Hero: React.FC = () => {
-  // Main container variants for the Sidewave assembly
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -20,7 +19,6 @@ export const Hero: React.FC = () => {
     },
   };
 
-  // High-fidelity entry: letters appear from a scale+blur+vertical offset
   const letterVariants = {
     hidden: { 
       opacity: 0, 
@@ -35,7 +33,7 @@ export const Hero: React.FC = () => {
       filter: 'blur(0px)',
       transition: {
         duration: 1.4,
-        ease: [0.16, 1, 0.3, 1], // Sophisticated Apple-style ease-out
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
@@ -49,7 +47,6 @@ export const Hero: React.FC = () => {
           animate="visible"
           className="relative inline-block w-full"
         >
-          {/* Main Name: Unbreakable line with fluid typography */}
           <motion.h1
             className="text-[16vw] sm:text-[14vw] md:text-[12rem] lg:text-[15rem] font-black tracking-[-0.05em] leading-none mb-8 text-white uppercase whitespace-nowrap flex justify-center items-center w-full"
             style={{ 
@@ -68,7 +65,6 @@ export const Hero: React.FC = () => {
             ))}
           </motion.h1>
 
-          {/* Role and Action with refined reveal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,7 +72,7 @@ export const Hero: React.FC = () => {
             className="flex flex-col items-center gap-8"
           >
             <p className="text-[10px] sm:text-xs font-bold text-white/20 tracking-[0.8em] uppercase ml-[0.8em]">
-              AI Engineer | <span className="text-hyper/60">Autonomous Architect</span>
+              AI Engineer | <span className="text-amber/60">Autonomous Architect</span>
             </p>
 
             <motion.div
@@ -95,10 +91,8 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Background Ambience: Subtle Sidewave glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
       
-      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.15 }}
