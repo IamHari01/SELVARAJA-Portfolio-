@@ -63,20 +63,13 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col xs:flex-row items-center justify-center gap-4 md:gap-6 px-4"
+          className="flex items-center justify-center gap-4 px-4"
         >
           <LiquidButton 
-            className="w-full xs:w-auto min-w-[200px]"
+            className="w-auto px-10"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Access Systems <ChevronRight className="w-4 h-4" />
-          </LiquidButton>
-          <LiquidButton 
-            variant="secondary" 
-            className="w-full xs:w-auto min-w-[200px]"
-            onClick={() => document.getElementById('arsenal')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Arsenal <Cpu className="w-4 h-4" />
+            Access Systems <ChevronRight className="w-3.5 h-3.5" />
           </LiquidButton>
         </motion.div>
       </div>
