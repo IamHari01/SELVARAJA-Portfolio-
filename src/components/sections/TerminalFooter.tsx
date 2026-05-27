@@ -27,7 +27,8 @@ export const TerminalFooter: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const email = "selvahari399@gmail.com";
-  const phoneNumber = "+91 00000 00000"; // Placeholder: Update with your actual mobile number
+  const phoneNumber = "9360308589";
+  const formattedPhone = "+91 9360308589";
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -132,6 +133,7 @@ export const TerminalFooter: React.FC = () => {
               className="relative"
               onMouseEnter={() => setIsPhoneHovered(true)}
               onMouseLeave={() => setIsPhoneHovered(false)}
+              onClick={() => setIsPhoneHovered(!isPhoneHovered)}
             >
               <AnimatePresence>
                 {isPhoneHovered && (
@@ -141,7 +143,7 @@ export const TerminalFooter: React.FC = () => {
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900 border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
                   >
-                    <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{phoneNumber}</span>
+                    <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{formattedPhone}</span>
                     <button 
                       onClick={(e) => copyToClipboard(e, phoneNumber, 'phone')}
                       className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
@@ -160,9 +162,14 @@ export const TerminalFooter: React.FC = () => {
                   boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
                 }}
                 whileTap={{ scale: 0.9 }}
-                href={`tel:${phoneNumber.replace(/\s+/g, '')}`}
+                href={`tel:${phoneNumber}`}
                 className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
                 aria-label="Phone"
+                onClick={(e) => {
+                  if (window.innerWidth < 768 && !isPhoneHovered) {
+                    e.preventDefault();
+                  }
+                }}
               >
                 <Phone className="w-6 h-6" />
               </motion.a>
@@ -173,6 +180,7 @@ export const TerminalFooter: React.FC = () => {
               className="relative"
               onMouseEnter={() => setIsEmailHovered(true)}
               onMouseLeave={() => setIsEmailHovered(false)}
+              onClick={() => setIsEmailHovered(!isEmailHovered)}
             >
               <AnimatePresence>
                 {isEmailHovered && (
@@ -204,6 +212,11 @@ export const TerminalFooter: React.FC = () => {
                 href={`mailto:${email}`}
                 className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
                 aria-label="Email"
+                onClick={(e) => {
+                  if (window.innerWidth < 768 && !isEmailHovered) {
+                    e.preventDefault();
+                  }
+                }}
               >
                 <Mail className="w-6 h-6" />
               </motion.a>
