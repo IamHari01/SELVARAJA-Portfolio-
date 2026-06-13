@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -88,11 +89,11 @@ export const TerminalFooter: React.FC = () => {
     <footer className="py-12 md:py-20 px-4 md:px-6 bg-black relative">
       <div className="max-w-5xl mx-auto">
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="flex flex-col gap-2">
-            <h3 className="text-2xl md:text-4xl font-black tracking-[0.15em] uppercase">
+          <div className="flex flex-col gap-3">
+            <h3 className="text-2xl md:text-4xl font-black tracking-[0.25em] uppercase">
               INITIALIZE <span className="text-fire">COLLABORATION</span>
             </h3>
-            <p className="text-white/60 text-sm md:text-base font-medium uppercase tracking-[0.2em] opacity-80">
+            <p className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] opacity-80">
               Ready to engineer the next intelligence paradigm.
             </p>
           </div>
@@ -128,20 +129,18 @@ export const TerminalFooter: React.FC = () => {
               <Linkedin className="w-6 h-6" />
             </motion.a>
             
-            {/* Phone Icon with Reveal Pill */}
             <div 
               className="relative"
               onMouseEnter={() => setIsPhoneHovered(true)}
               onMouseLeave={() => setIsPhoneHovered(false)}
-              onClick={() => setIsPhoneHovered(!isPhoneHovered)}
             >
               <AnimatePresence>
                 {isPhoneHovered && (
                   <motion.div
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: -60, scale: 1 }}
+                    animate={{ opacity: 1, y: -65, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900 border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
                   >
                     <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{formattedPhone}</span>
                     <button 
@@ -165,30 +164,23 @@ export const TerminalFooter: React.FC = () => {
                 href={`tel:${phoneNumber}`}
                 className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
                 aria-label="Phone"
-                onClick={(e) => {
-                  if (window.innerWidth < 768 && !isPhoneHovered) {
-                    e.preventDefault();
-                  }
-                }}
               >
                 <Phone className="w-6 h-6" />
               </motion.a>
             </div>
 
-            {/* Email Icon with Reveal Pill */}
             <div 
               className="relative"
               onMouseEnter={() => setIsEmailHovered(true)}
               onMouseLeave={() => setIsEmailHovered(false)}
-              onClick={() => setIsEmailHovered(!isEmailHovered)}
             >
               <AnimatePresence>
                 {isEmailHovered && (
                   <motion.div
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: -60, scale: 1 }}
+                    animate={{ opacity: 1, y: -65, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-neutral-900 border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
                   >
                     <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
                     <button 
@@ -212,11 +204,6 @@ export const TerminalFooter: React.FC = () => {
                 href={`mailto:${email}`}
                 className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
                 aria-label="Email"
-                onClick={(e) => {
-                  if (window.innerWidth < 768 && !isEmailHovered) {
-                    e.preventDefault();
-                  }
-                }}
               >
                 <Mail className="w-6 h-6" />
               </motion.a>

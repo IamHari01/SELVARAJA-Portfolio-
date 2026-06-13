@@ -1,5 +1,22 @@
-import type {Metadata} from 'next';
+
+import type { Metadata } from 'next';
+import { Inter, Inter_Tight, Source_Code_Pro } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  variable: '--font-inter-tight',
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-code',
+});
 
 export const metadata: Metadata = {
   title: 'Selvaraja | AI Engineer & Autonomous Architect',
@@ -12,12 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&family=Inter:wght@100..900&family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`dark ${inter.variable} ${interTight.variable} ${sourceCodePro.variable}`}>
       <body className="font-body antialiased bg-[#000000] text-white">
         {children}
       </body>
