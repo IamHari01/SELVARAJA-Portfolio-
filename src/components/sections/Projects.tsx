@@ -1,11 +1,10 @@
-
 "use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ExternalLink, Github, Code2, Workflow, ArrowUpRight } from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
 const projects = [
@@ -13,24 +12,24 @@ const projects = [
     id: 'project-nexus',
     title: 'NEXUS',
     subtitle: 'Autonomous Multi-Agent Resume Orchestrator',
-    description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes and precise logic.',
+    description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes and precise logic. Engineered for autonomous orchestration without reliance on RAG or Vector databases.',
     tech: ['Python', 'LangGraph', 'Gemini', 'Firebase', 'Node Graphs'],
     features: ['Real-time job aggregation', 'Intelligent logic orchestration', 'Multi-agent node coordination', 'Automated decision-making'],
     placeholderId: 'project-agent',
     color: 'fire',
-    liveUrl: '#',
+    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
     repoUrl: 'https://github.com/IamHari01'
   },
   {
     id: 'project-tony',
     title: 'TONY',
     subtitle: 'Advanced AI Personal Assistant',
-    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution.',
+    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution and contextual logical states.',
     tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Voice Processing'],
     features: ['Proactive autonomous reasoning', 'Logical state management', 'Voice-to-Task orchestration', 'Cross-platform API integration'],
     placeholderId: 'project-tony',
     color: 'amber',
-    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
+    liveUrl: '#',
     repoUrl: 'https://github.com/IamHari01'
   }
 ];
@@ -83,6 +82,7 @@ export const Projects: React.FC = () => {
                       fill
                       className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-60 group-hover:opacity-90"
                       data-ai-hint={imageData?.imageHint}
+                      priority={idx === 0}
                     />
                   </div>
                 </div>

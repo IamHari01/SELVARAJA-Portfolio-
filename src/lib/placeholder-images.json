@@ -2,14 +2,14 @@
   "placeholderImages": [
     {
       "id": "project-agent",
-      "description": "NEXUS - Autonomous Multi-Agent Resume Orchestrator visual from Pinterest",
-      "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
+      "description": "NEXUS - Autonomous Multi-Agent Resume Orchestrator visual",
+      "imageUrl": "/images/brain.jpeg",
       "imageHint": "AI resume intelligence"
     },
     {
       "id": "project-tony",
-      "description": "Advanced futuristic AI personal assistant interface with glowing neural patterns",
-      "imageUrl": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=2000&auto=format&fit=crop",
+      "description": "TONY - Advanced futuristic AI personal assistant interface",
+      "imageUrl": "/images/Elementary Particles.jpeg",
       "imageHint": "futuristic AI assistant"
     }
   ]
