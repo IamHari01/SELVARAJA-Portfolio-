@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LiquidButton } from '@/components/ui/LiquidButton';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, FileText } from 'lucide-react';
 
 const name = "SELVARAJA";
 
@@ -90,12 +90,21 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 2 }}
+            className="flex flex-col items-center gap-5"
           >
             <LiquidButton 
-              className="w-auto px-10 py-3 text-[9px] h-10 min-w-[180px] shadow-fire/30"
+              className="w-auto px-10 py-3 text-[9px] h-10 min-w-[200px] shadow-fire/30"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Access Systems <ChevronRight className="w-4 h-4" />
+            </LiquidButton>
+
+            <LiquidButton 
+              variant="secondary"
+              className="w-auto px-6 py-2 text-[8px] h-8 min-w-[160px] opacity-60 hover:opacity-100 transition-opacity"
+              onClick={() => window.open('#', '_blank')}
+            >
+              View Resume <FileText className="w-3 h-3" />
             </LiquidButton>
           </motion.div>
         </motion.div>
