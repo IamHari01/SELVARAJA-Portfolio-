@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useRef, useEffect } from 'react';
@@ -7,7 +8,7 @@ import * as THREE from 'three';
 const categories = [
   "Advanced AI Engineering",
   "Autonomous Agent Systems",
-  "Smart Contracts",
+  "Multimodal AI Systems",
   "Backend Infrastructure",
   "Distributed Systems",
   "Logical Problem Solving",

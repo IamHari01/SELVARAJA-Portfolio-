@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -20,14 +21,14 @@ const projects = [
     repoUrl: 'https://github.com/IamHari01'
   },
   {
-    id: 'project-voting',
-    title: 'Decentralised Voting Architecture',
-    description: 'An immutable cryptographic ledger designed for absolute security and autonomous verification in distributed networks.',
-    tech: ['Solidity', 'Ethereum', 'Web3', 'Smart Contracts', 'Blockchain'],
-    features: ['Immutable protocol', 'Zero-knowledge proofs', 'Ethereum Mainnet', 'Secure consensus'],
-    placeholderId: 'project-voting',
+    id: 'project-tony',
+    title: 'TONY: Advanced AI Personal Assistant',
+    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution.',
+    tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Real-time Voice'],
+    features: ['Proactive reasoning', 'Contextual long-term memory', 'Voice-to-Task orchestration', 'Autonomous API integration'],
+    placeholderId: 'project-tony',
     color: 'amber',
-    liveUrl: 'https://project-voting.vercel.app/',
+    liveUrl: '#',
     repoUrl: 'https://github.com/IamHari01'
   }
 ];
@@ -47,7 +48,7 @@ export const Projects: React.FC = () => {
               PROJECT <span className="text-fire">DNA</span>
             </motion.h2>
             <p className="text-white/40 max-w-xl text-lg font-medium leading-relaxed">
-              Engineering the next generation of autonomous intelligence through modular, scalable, and decentralized architecture.
+              Engineering the next generation of autonomous intelligence through modular, scalable, and personalized AI architecture.
             </p>
           </div>
           <motion.div 
