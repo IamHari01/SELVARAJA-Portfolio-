@@ -10,24 +10,26 @@ import Image from 'next/image';
 
 const projects = [
   {
-    id: 'project-agent',
-    title: 'Autonomous Multi-Agent Resume Orchestrator',
-    description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes.',
-    tech: ['Python', 'LangGraph', 'Gemini', 'Firebase', 'Real-time APIs'],
-    features: ['Real-time job aggregation', 'ATS Optimization logic', 'Multi-agent node orchestration', 'Intelligent career mapping'],
-    placeholderId: 'project-agent',
-    color: 'fire',
-    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
-    repoUrl: 'https://github.com/IamHari01'
-  },
-  {
     id: 'project-tony',
-    title: 'NEXUS: Advanced AI Personal Assistant',
+    title: 'NEXUS',
+    subtitle: 'Advanced AI Personal Assistant',
     description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution.',
     tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Voice Processing'],
     features: ['Proactive autonomous reasoning', 'Logical state management', 'Voice-to-Task orchestration', 'Cross-platform API integration'],
     placeholderId: 'project-tony',
     color: 'amber',
+    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
+    repoUrl: 'https://github.com/IamHari01'
+  },
+  {
+    id: 'project-agent',
+    title: 'TONY',
+    subtitle: 'Autonomous Multi-Agent Resume Orchestrator',
+    description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes and precise logic.',
+    tech: ['Python', 'LangGraph', 'Gemini', 'Firebase', 'Node Graphs'],
+    features: ['Real-time job aggregation', 'Intelligent logic orchestration', 'Multi-agent node coordination', 'Automated decision-making'],
+    placeholderId: 'project-agent',
+    color: 'fire',
     liveUrl: '#',
     repoUrl: 'https://github.com/IamHari01'
   }
@@ -95,9 +97,14 @@ export const Projects: React.FC = () => {
                       ))}
                     </div>
 
-                    <h3 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
-                      {project.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-4xl md:text-7xl font-black tracking-tight leading-none mb-2">
+                        {project.title}
+                      </h3>
+                      <h4 className="text-xl md:text-2xl font-bold text-fire/60 uppercase tracking-widest">
+                        {project.subtitle}
+                      </h4>
+                    </div>
                     
                     <p className="text-white/50 text-base md:text-xl font-medium leading-relaxed max-w-lg">
                       {project.description}
