@@ -13,8 +13,8 @@ const categories = [
   "Distributed Systems",
   "Logical Problem Solving",
   "Firebase Architecture",
-  "Vector Databases",
-  "RAG Pipelines",
+  "Python Engineering",
+  "LangGraph Orchestration",
   "Full Stack Engineering"
 ];
 
