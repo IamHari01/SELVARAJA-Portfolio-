@@ -3,13 +3,13 @@
     {
       "id": "project-agent",
       "description": "High-fidelity cybernetic artificial intelligence and neural nodes",
-      "imageUrl": "https://i.pinimg.com/736x/c1/d3/37/c1d3379f145d5b407e3527171879e3e2.jpg",
+      "imageUrl": "https://picsum.photos/seed/nexus-ai/1200/800",
       "imageHint": "artificial intelligence"
     },
     {
       "id": "project-tony",
       "description": "Advanced futuristic AI personal assistant interface with glowing neural patterns",
-      "imageUrl": "https://i.pinimg.com/736x/2c/61/89/2c61899997194f42f6f4d36006e866f8.jpg",
+      "imageUrl": "https://picsum.photos/seed/tony-assistant/1200/800",
       "imageHint": "futuristic AI assistant"
     }
   ]
