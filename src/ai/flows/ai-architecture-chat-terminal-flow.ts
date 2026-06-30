@@ -44,16 +44,15 @@ Key Attributes: top 0.1% AI-native engineer, systems thinker, distributed intell
 
 --- PROJECTS ---
 
-Project 1: NEXUS - Advanced AI Personal Assistant
+Project 1: NEXUS - Autonomous Multi-Agent Resume Orchestrator
+Features to Highlight: Real-time job aggregation, resume intelligence logic, multi-agent node orchestration, Gemini-powered reasoning. 
+Note: Does NOT use RAG or Vector Databases; relies on high-fidelity logical reasoning and distributed agent nodes.
+Architectural Decisions: Focused on high-fidelity reasoning and automated decision-making through distributed agent nodes. It is a logic-heavy application designed for intelligent job search automation.
+
+Project 2: TONY - Advanced AI Personal Assistant
 Features to Highlight: Multimodal interaction, Proactive task management, Contextual logical state, Autonomous API orchestration.
 Technologies Used: Genkit, Gemini 1.5 Pro, Next.js, Firebase.
 Architectural Decisions: Leverages Genkit for robust AI flow management and Gemini 1.5 Pro for deep reasoning, bridging human intent with autonomous task execution.
-
-Project 2: TONY - Autonomous Multi-Agent Resume Orchestrator
-Features to Highlight: Real-time job aggregation, resume intelligence logic, multi-agent node orchestration, Gemini-powered reasoning. 
-Note: Does NOT use RAG or Vector Databases; relies on high-fidelity logical reasoning and distributed agent nodes.
-Technologies Used: Python, LangGraph, Gemini, Firebase, Node Graphs.
-Architectural Decisions: Focused on high-fidelity reasoning and automated decision-making through distributed agent nodes. It is a logic-heavy application designed for intelligent job search automation.
 
 --- TECHNICAL ARSENAL ---
 Categories: Advanced AI Engineering, Autonomous Agent Systems, Multimodal AI Systems, Backend Infrastructure, Distributed Systems, Logical Problem Solving, Firebase Architecture, Full Stack Engineering.

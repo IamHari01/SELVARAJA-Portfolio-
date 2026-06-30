@@ -10,20 +10,8 @@ import Image from 'next/image';
 
 const projects = [
   {
-    id: 'project-tony',
+    id: 'project-nexus',
     title: 'NEXUS',
-    subtitle: 'Advanced AI Personal Assistant',
-    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution.',
-    tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Voice Processing'],
-    features: ['Proactive autonomous reasoning', 'Logical state management', 'Voice-to-Task orchestration', 'Cross-platform API integration'],
-    placeholderId: 'project-tony',
-    color: 'amber',
-    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
-    repoUrl: 'https://github.com/IamHari01'
-  },
-  {
-    id: 'project-agent',
-    title: 'TONY',
     subtitle: 'Autonomous Multi-Agent Resume Orchestrator',
     description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes and precise logic.',
     tech: ['Python', 'LangGraph', 'Gemini', 'Firebase', 'Node Graphs'],
@@ -31,6 +19,18 @@ const projects = [
     placeholderId: 'project-agent',
     color: 'fire',
     liveUrl: '#',
+    repoUrl: 'https://github.com/IamHari01'
+  },
+  {
+    id: 'project-tony',
+    title: 'TONY',
+    subtitle: 'Advanced AI Personal Assistant',
+    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution.',
+    tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Voice Processing'],
+    features: ['Proactive autonomous reasoning', 'Logical state management', 'Voice-to-Task orchestration', 'Cross-platform API integration'],
+    placeholderId: 'project-tony',
+    color: 'amber',
+    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
     repoUrl: 'https://github.com/IamHari01'
   }
 ];
@@ -98,7 +98,7 @@ export const Projects: React.FC = () => {
                     </div>
 
                     <div>
-                      <h3 className="text-4xl md:text-7xl font-black tracking-tight leading-none mb-2">
+                      <h3 className="text-4xl md:text-7xl font-black tracking-tight leading-none mb-2 uppercase">
                         {project.title}
                       </h3>
                       <h4 className="text-xl md:text-2xl font-bold text-fire/60 uppercase tracking-widest">
