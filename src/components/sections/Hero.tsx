@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -37,6 +38,8 @@ export const Hero: React.FC = () => {
       },
     },
   };
+
+  const resumeUrl = "https://drive.google.com/file/d/1mtFFHtT_LCZNPaCiJNEQLTs5A19hSsB9/view?usp=sharing";
 
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden bg-transparent">
@@ -102,7 +105,7 @@ export const Hero: React.FC = () => {
             <LiquidButton 
               variant="secondary"
               className="w-auto px-6 py-2 text-[8px] h-8 min-w-[160px] opacity-60 hover:opacity-100 transition-opacity"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open(resumeUrl, '_blank')}
             >
               View Resume <FileText className="w-3 h-3" />
             </LiquidButton>
