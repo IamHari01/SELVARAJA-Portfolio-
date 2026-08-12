@@ -9,27 +9,37 @@ import Image from 'next/image';
 
 const projects = [
   {
-    id: 'project-nexus',
-    title: 'NEXUS',
-    subtitle: 'Autonomous Multi-Agent Resume Orchestrator',
-    description: 'A high-fidelity reasoning engine that automates complex job application workflows through distributed intelligence nodes and precise logic. Engineered for autonomous orchestration without reliance on RAG or Vector databases.',
-    tech: ['Python', 'LangGraph', 'Gemini', 'Firebase', 'Node Graphs'],
-    features: ['Real-time job aggregation', 'Intelligent logic orchestration', 'Multi-agent node coordination', 'Automated decision-making'],
+    id: 'project-k8-chat',
+    title: 'K8 CHAT',
+    subtitle: 'Enterprise Kubernetes AI Assistant',
+    description: 'Engineered a Kubernetes-domain RAG system with Jina AI embeddings, Qdrant, RRF, and Jina reranking, achieving 86.67% Recall@10, 0.852 NDCG@5, 94.5% faithfulness, and 91.0% answer relevancy. Profiled and optimized RAG retrieval bottlenecks, achieving 47.8ms warm-cache response latency via HTTP connection pooling and LRU caching.',
+    tech: ['Kubernetes', 'Python', 'Qdrant', 'Jina AI', 'FastAPI', 'RAG', 'Reranking'],
+    features: [
+      '86.67% Recall@10 & 0.852 NDCG@5',
+      '94.5% Faithfulness & 91.0% Relevancy',
+      '47.8ms Warm-Cache Latency',
+      'HTTP Connection Pooling & LRU Caching'
+    ],
     placeholderId: 'project-agent',
     color: 'fire',
-    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
+    liveUrl: '#',
     repoUrl: 'https://github.com/IamHari01'
   },
   {
-    id: 'project-tony',
-    title: 'TONY',
-    subtitle: 'Advanced AI Personal Assistant',
-    description: 'A sophisticated multimodal assistant engineered with Genkit and Gemini, bridging human intent with autonomous task execution and contextual logical states.',
-    tech: ['Genkit', 'Gemini 1.5 Pro', 'Next.js', 'Firebase', 'Voice Processing'],
-    features: ['Proactive autonomous reasoning', 'Logical state management', 'Voice-to-Task orchestration', 'Cross-platform API integration'],
+    id: 'project-nexus',
+    title: 'NEXUS',
+    subtitle: 'Multi-Agentic Resume Intelligence',
+    description: 'Built an AI-powered ATS resume scanner that parses candidate resumes, matches profiles against live job postings, and calculates match scores with customized skill-gap recommendations. Optimized performance using a two-stage matching engine and Redis caching, reducing processing latency under 2.5s with 99.9% availability.',
+    tech: ['Python', 'LangGraph', 'LangChain', 'Upstash Redis', 'FastAPI', 'Agentic AI'],
+    features: [
+      'AI-Powered ATS Resume Scanner',
+      'Customized Skill-Gap Analysis',
+      'Two-Stage Matching Engine',
+      '< 2.5s Latency & 99.9% Availability'
+    ],
     placeholderId: 'project-tony',
     color: 'amber',
-    liveUrl: '#',
+    liveUrl: 'https://nexus-2-0-eight.vercel.app/',
     repoUrl: 'https://github.com/IamHari01'
   }
 ];

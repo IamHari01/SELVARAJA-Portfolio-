@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useSpring, useMotionValue, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface LiquidButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface LiquidButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
   variant?: 'primary' | 'secondary';
   children: React.ReactNode;
 }

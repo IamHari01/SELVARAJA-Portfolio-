@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
       filter: 'blur(0px)',
       transition: {
         duration: 1.4,
-        ease: [0.16, 1, 0.3, 1], // High-end Apple-style curve
+        ease: [0.16, 1, 0.3, 1] as const,
       },
     },
   };

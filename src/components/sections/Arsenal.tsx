@@ -6,16 +6,16 @@ import { motion } from 'framer-motion';
 import * as THREE from 'three';
 
 const categories = [
-  "Advanced AI Engineering",
-  "Autonomous Agent Systems",
-  "Multimodal AI Systems",
-  "Backend Infrastructure",
-  "Distributed Systems",
-  "Logical Problem Solving",
-  "Firebase Architecture",
-  "Python Engineering",
-  "LangGraph Orchestration",
-  "Full Stack Engineering"
+  "RAG & Retrieval Architecture",
+  "Kubernetes & Docker Infra",
+  "LangGraph & Agentic AI",
+  "Qdrant & Vector DBs",
+  "Jina AI Embeddings",
+  "FastAPI & REST APIs",
+  "Ragas & LLM Evals",
+  "Upstash Redis & Celery",
+  "PyTorch & Transformers",
+  "LLM Prompt Engineering"
 ];
 
 export const Arsenal: React.FC = () => {
