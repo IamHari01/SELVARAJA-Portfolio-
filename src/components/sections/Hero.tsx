@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
     },
   };
 
-  const resumeUrl = "https://drive.google.com/file/d/1mtFFHtT_LCZNPaCiJNEQLTs5A19hSsB9/view?usp=sharing";
+  const resumeUrl = "https://drive.google.com/file/d/1Zi7wf6ib_e7zx_73m2czIaOF_AvwobCk/view?usp=sharing";
 
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden bg-transparent">
