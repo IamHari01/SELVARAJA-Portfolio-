@@ -12,7 +12,7 @@ const projects = [
     id: 'project-k8-chat',
     title: 'K8 CHAT',
     subtitle: 'Enterprise Kubernetes AI Assistant',
-    description: 'Engineered a Kubernetes-domain RAG system with Jina AI embeddings, Qdrant, RRF, and Jina reranking, achieving 86.67% Recall@10, 0.852 NDCG@5, 94.5% faithfulness, and 91.0% answer relevancy. Profiled and optimized RAG retrieval bottlenecks, achieving 47.8ms warm-cache response latency via HTTP connection pooling and LRU caching.',
+    description: 'An enterprise-grade AI assistant engineered to simplify Kubernetes cluster operations and technical documentation search. Powered by a high-precision hybrid RAG pipeline with Jina embeddings, Qdrant vector retrieval, and reranking to deliver context-aware answers with verified production accuracy.',
     tech: ['Kubernetes', 'Python', 'Qdrant', 'Jina AI', 'FastAPI', 'RAG', 'Reranking'],
     features: [
       '86.67% Recall@10 & 0.852 NDCG@5',
@@ -29,7 +29,7 @@ const projects = [
     id: 'project-nexus',
     title: 'NEXUS',
     subtitle: 'Multi-Agentic Resume Intelligence',
-    description: 'Built an AI-powered ATS resume scanner that parses candidate resumes, matches profiles against live job postings, and calculates match scores with customized skill-gap recommendations. Optimized performance using a two-stage matching engine and Redis caching, reducing processing latency under 2.5s with 99.9% availability.',
+    description: 'An intelligent multi-agent ATS resume scanner designed to automate profile matching and career intelligence. Built with agentic workflows to parse candidate resumes, match against live job postings, and generate actionable skill-gap recommendations.',
     tech: ['Python', 'LangGraph', 'LangChain', 'Upstash Redis', 'FastAPI', 'Agentic AI'],
     features: [
       'AI-Powered ATS Resume Scanner',
