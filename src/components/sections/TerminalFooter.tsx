@@ -88,7 +88,7 @@ export const TerminalFooter: React.FC = () => {
   return (
     <footer className="py-12 md:py-20 px-4 md:px-6 bg-black relative">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-10 md:mb-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div className="mb-10 md:mb-12 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl md:text-4xl font-black tracking-[0.25em] uppercase">
               INITIALIZE <span className="text-fire">COLLABORATION</span>
@@ -97,36 +97,38 @@ export const TerminalFooter: React.FC = () => {
               Ready to engineer the next intelligence paradigm.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 items-center">
+          <div className="flex items-center gap-3 md:gap-4 p-2.5 rounded-full bg-white/[0.06] border border-white/20 shadow-[0_0_40px_rgba(255,87,34,0.12)] backdrop-blur-md">
             <motion.a 
               whileHover={{ 
-                scale: 1.15, 
-                backgroundColor: "rgba(255, 87, 34, 0.2)",
-                boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                scale: 1.12, 
+                backgroundColor: "rgba(255, 87, 34, 0.25)",
+                boxShadow: "0 0 25px rgba(255, 87, 34, 0.5)"
               }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.92 }}
               href="https://github.com/IamHari01" 
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300" 
+              className="p-3.5 md:p-4 rounded-full bg-white/10 border border-white/20 text-white hover:text-fire hover:border-fire/60 transition-all duration-300 shadow-md" 
               aria-label="Github"
+              title="GitHub Profile"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-5 h-5 md:w-6 md:h-6" />
             </motion.a>
             <motion.a 
               whileHover={{ 
-                scale: 1.15, 
-                backgroundColor: "rgba(255, 87, 34, 0.2)",
-                boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                scale: 1.12, 
+                backgroundColor: "rgba(255, 87, 34, 0.25)",
+                boxShadow: "0 0 25px rgba(255, 87, 34, 0.5)"
               }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.92 }}
               href="https://www.linkedin.com/in/selvaraja007/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300" 
+              className="p-3.5 md:p-4 rounded-full bg-white/10 border border-white/20 text-white hover:text-fire hover:border-fire/60 transition-all duration-300 shadow-md" 
               aria-label="LinkedIn"
+              title="LinkedIn Profile"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
             </motion.a>
             
             <div 
@@ -140,12 +142,12 @@ export const TerminalFooter: React.FC = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: -65, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/20 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
                   >
                     <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{formattedPhone}</span>
                     <button 
                       onClick={(e) => copyToClipboard(e, phoneNumber, 'phone')}
-                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
+                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/80 hover:text-white"
                       title="Copy Phone"
                     >
                       {isPhoneCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
@@ -156,16 +158,17 @@ export const TerminalFooter: React.FC = () => {
               
               <motion.a 
                 whileHover={{ 
-                  scale: 1.15, 
-                  backgroundColor: "rgba(255, 87, 34, 0.2)",
-                  boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                  scale: 1.12, 
+                  backgroundColor: "rgba(255, 87, 34, 0.25)",
+                  boxShadow: "0 0 25px rgba(255, 87, 34, 0.5)"
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.92 }}
                 href={`tel:${phoneNumber}`}
-                className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
+                className="p-3.5 md:p-4 rounded-full bg-white/10 border border-white/20 text-white hover:text-fire hover:border-fire/60 transition-all duration-300 block shadow-md" 
                 aria-label="Phone"
+                title="Call Phone"
               >
-                <Phone className="w-6 h-6" />
+                <Phone className="w-5 h-5 md:w-6 md:h-6" />
               </motion.a>
             </div>
 
@@ -180,12 +183,12 @@ export const TerminalFooter: React.FC = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: -65, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/10 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
+                    className="absolute left-1/2 -translate-x-1/2 px-5 py-3 bg-[#0a0a0a] border border-white/20 rounded-full whitespace-nowrap z-[100] flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,1)]"
                   >
                     <span className="text-[11px] md:text-xs font-code text-fire font-bold tracking-wider">{email}</span>
                     <button 
                       onClick={(e) => copyToClipboard(e, email, 'email')}
-                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
+                      className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/80 hover:text-white"
                       title="Copy Email"
                     >
                       {isEmailCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
@@ -196,16 +199,17 @@ export const TerminalFooter: React.FC = () => {
               
               <motion.a 
                 whileHover={{ 
-                  scale: 1.15, 
-                  backgroundColor: "rgba(255, 87, 34, 0.2)",
-                  boxShadow: "0 0 30px rgba(255, 87, 34, 0.4)"
+                  scale: 1.12, 
+                  backgroundColor: "rgba(255, 87, 34, 0.25)",
+                  boxShadow: "0 0 25px rgba(255, 87, 34, 0.5)"
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.92 }}
                 href={`mailto:${email}`}
-                className="p-4 md:p-5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-fire hover:border-fire/50 transition-all duration-300 block" 
+                className="p-3.5 md:p-4 rounded-full bg-white/10 border border-white/20 text-white hover:text-fire hover:border-fire/60 transition-all duration-300 block shadow-md" 
                 aria-label="Email"
+                title="Send Email"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-5 h-5 md:w-6 md:h-6" />
               </motion.a>
             </div>
           </div>
