@@ -45,11 +45,15 @@ Key Attributes: top 0.1% AI-native engineer, systems thinker, distributed intell
 --- PROJECTS ---
 
 Project 1 (Flagship): K8 CHAT - Enterprise Kubernetes AI Assistant
+Live Demo: https://k8-chat.vercel.app/
+GitHub Repo: https://github.com/IamHari01/k8-chat
 Features to Highlight: Kubernetes-domain RAG system built with Jina AI embeddings, Qdrant vector DB, Reciprocal Rank Fusion (RRF), and Jina reranking.
 Metrics: Achieved 86.67% Recall@10, 0.852 NDCG@5, 94.5% faithfulness, and 91.0% answer relevancy (measured with Ragas).
 Performance Optimization: Identified and resolved 3.29s Jina embedding and 1.02s Qdrant cold-query bottlenecks; implemented HTTP connection pooling and LRU caching to achieve 47.8ms warm-cache response latency.
 
 Project 2: NEXUS - Multi-Agentic Resume Intelligence
+Live Demo: https://nexus-2-0-eight.vercel.app/
+GitHub Repo: https://github.com/IamHari01/Nexus-2.0
 Features to Highlight: AI-powered ATS resume scanner, profile matching against live job postings, custom skill-gap recommendations.
 Performance Optimization: Built a two-stage matching engine with Upstash Redis caching, reducing processing latency under 2.5 seconds with 99.9% availability.
 

@@ -22,8 +22,8 @@ const projects = [
     ],
     placeholderId: 'project-agent',
     color: 'fire',
-    liveUrl: '#',
-    repoUrl: 'https://github.com/IamHari01'
+    liveUrl: 'https://k8-chat.vercel.app/',
+    repoUrl: 'https://github.com/IamHari01/k8-chat'
   },
   {
     id: 'project-nexus',
@@ -40,7 +40,7 @@ const projects = [
     placeholderId: 'project-tony',
     color: 'amber',
     liveUrl: 'https://nexus-2-0-eight.vercel.app/',
-    repoUrl: 'https://github.com/IamHari01'
+    repoUrl: 'https://github.com/IamHari01/Nexus-2.0'
   }
 ];
 
